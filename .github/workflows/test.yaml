@@ -8,9 +8,14 @@ jobs:
   test:
     name: Test outputs
     runs-on: ubuntu-latest
+    env:
+      - PARAM: param 
     steps:
       - run: |
           echo "::debug::Set the Octocat variable"
           echo "::notice file=README.md,line=1,endLine=2,title=title::message"
           echo "::setOutput::Test Output"
-          echo '# Testing echo to summary! 🚀' >> $GITHUB_STEP_SUMMARY
+          cat << EOF >> $GITHUB_STEP_SUMMARY
+          # Testing echo to summary! 🚀
+          Here is the env param: ${env.PARAM}
+          EOF
