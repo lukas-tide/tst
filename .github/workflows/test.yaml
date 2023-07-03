@@ -18,10 +18,6 @@ jobs:
           echo "::setOutput::Test Output"
           cat << EOF >> "$GITHUB_STEP_SUMMARY"
             # Testing echo to summary! 🚀
-            Here is the env param: 
-            multiline testintg
-
-
-            gggg
+            Here is the env param: ${{ env.PARAM }}
           EOF
           
