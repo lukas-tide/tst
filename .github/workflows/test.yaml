@@ -16,7 +16,12 @@ jobs:
           echo "::debug::Set the Octocat variable"
           echo "::notice file=README.md,line=1,endLine=2,title=title::message"
           echo "::setOutput::Test Output"
-          cat <<EOF 
+          cat << EOF >> "$GITHUB_STEP_SUMMARY"
             # Testing echo to summary! 🚀
-            Here is the env param: ${env.PARAM}
+            Here is the env param: 
+            multiline testintg
+
+
+            gggg
           EOF
+          
