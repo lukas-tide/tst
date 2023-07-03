@@ -1,0 +1,15 @@
+name: Testing
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Test outputs
+    runs-on: ubuntu-latest
+    steps:
+      - runs: |
+        echo "::debug::Set the Octocat variable"
+        echo "::notice file=README.md,line=1,endLine=2,title=title::message"
+        echo "::setOutput::Test Output"
