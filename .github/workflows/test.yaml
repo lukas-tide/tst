@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - pipelines
 
 jobs:
   test:
@@ -16,6 +17,6 @@ jobs:
           echo "::notice file=README.md,line=1,endLine=2,title=title::message"
           echo "::setOutput::Test Output"
           cat << EOF >> $GITHUB_STEP_SUMMARY
-          # Testing echo to summary! 🚀
-          Here is the env param: ${env.PARAM}
+            # Testing echo to summary! 🚀
+            Here is the env param: ${env.PARAM}
           EOF
