@@ -13,4 +13,4 @@ jobs:
           echo "::debug::Set the Octocat variable"
           echo "::notice file=README.md,line=1,endLine=2,title=title::message"
           echo "::setOutput::Test Output"
-          echo "::echo::Test echo"
+          echo '# Testing echo to summary! 🚀' >> $GITHUB_STEP_SUMMARY
