@@ -9,7 +9,7 @@ jobs:
     name: Test outputs
     runs-on: ubuntu-latest
     env:
-      - PARAM: param 
+      PARAM: param 
     steps:
       - run: |
           echo "::debug::Set the Octocat variable"
