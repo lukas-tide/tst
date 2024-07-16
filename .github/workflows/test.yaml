@@ -11,6 +11,12 @@ jobs:
     env:
       PARAM: param 
     steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./.github/workflows/test.js')
+            await script({github, context, core})
+          
       - run: |
           echo "::debug::Set the Octocat variable"
           echo "::notice file=README.md,line=1,endLine=2,title=title::message"
