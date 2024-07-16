@@ -1,5 +1,6 @@
 module.exports = async ({ github, context, core }) => {
-    console.log(github)
-    console.log(context)
-    console.log(core)
+    for (let i in arguments) {
+        a = arguments[i]
+        console.debug(a, i)
+    }
 }

@@ -12,6 +12,8 @@ jobs:
       PARAM: param 
     steps:
       - uses: actions/checkout@v4
+        id: checkout
+        
       - uses: actions/github-script@v7
         with:
           script: |
