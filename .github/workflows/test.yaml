@@ -1,5 +1,6 @@
 name: Testing
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -23,6 +24,7 @@ jobs:
       - run: |
           echo "::debug::Set the Octocat variable"
           echo "::notice file=README.md,line=1,endLine=2,title=title::message"
+          echo "::warning file=README.md,line=2,endLine=3,title=title::Warn message"
           echo "::setOutput::Test Output"
           cat << EOF >> $GITHUB_STEP_SUMMARY
           # Testing echo to summary! 🚀
